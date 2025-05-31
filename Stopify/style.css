@@ -1,0 +1,230 @@
+body {
+    background-color: #000000;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #000000;
+    z-index: 9998;  /* <<== adiciona essa linha para ficar na frente */
+
+
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #0f0f0f;
+  color: rgb(173, 102, 102);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+  height: 60px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+  z-index: 9998; /* Fica à frente de tudo */
+}
+
+
+.barra-pesquisa {
+    margin-left: 650px;
+    align-items: center;
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra-pesquisa input[type="text"] {
+    background-color: #0a0a0a;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 200px;
+}
+
+.barra-pesquisa button {
+    background-color: #15e65e;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.barra-pesquisa button img {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+}
+
+.centro {
+    margin-top: 50px;
+    margin-left: 240px; /* Compensa a largura da sidebar */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.biblioteca, .recentes, .artistas {
+    background-color: #0f0f0f;
+    border-radius: 10px;
+    padding: 30px;
+    width: 1000px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.artist-card {
+    background-color: #282828;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    width: 150px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.sidebar {
+    margin-top: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1DB954;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.sidebar nav ul li a:hover {
+    color: #1DB954;
+}
+.artist-card, .recent-card, .biblioteca-card {
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    width: 150px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0f0f0f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.7);
+  font-family: Arial, sans-serif;
+  gap: 20px;
+    
+  z-index: 9999;  /* <<== adiciona essa linha para ficar na frente */
+
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 200px;
+}
+
+.player-album {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.player-text h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.player-text p {
+  margin: 0;
+  font-size: 12px;
+  color: white;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.player-controls button:hover {
+  color: #1db954; /* verde do Spotify */
+}
+
+#progress {
+  width: 100%;
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+a:hover {text-decoration: underline;}
+        a {text-decoration: none;}
+        a {font-family: 'Arial', sans-serif;
+        color: white;
+        }
+        
