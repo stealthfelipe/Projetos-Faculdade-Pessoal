@@ -1,230 +1,92 @@
+/* Estilo geral do corpo da página */
 body {
-    background-color: #000000;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
+    background-color: rgb(0, 0, 0);   /* Define a cor de fundo da página */
+    font-family: 'Courier New', Courier, monospace;   /* Define a fonte usada no texto */
+    color: rgb(255, 255, 255);   /* Define a cor do texto padrão */
+    margin: 0;   /* Remove margens padrão do navegador */
+    padding: 0;  /* Remove espaçamento interno padrão do navegador */
 }
 
-header {
-    background-color: #000000;
+/* Container principal que centraliza todos os elementos */
+.center {
+    display: flex;   /* Ativa o Flexbox para alinhamento */
+    flex-direction: column;   /* Organiza os elementos verticalmente */
+    align-items: center;   /* Centraliza os elementos no eixo horizontal */
+    padding: 20px;   /* Espaçamento interno do container */
+}
+
+/* Estilo padrão para cada caixa (div) da página */
+.cx {
+    border: 1px solid black;   /* Adiciona uma borda preta */
+    border-radius: 10px;   /* Arredonda os cantos da borda */
+    text-align: center;   /* Centraliza o texto dentro da caixa */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);   /* Adiciona uma sombra leve à caixa */
+    padding: 40px;   /* Espaçamento interno da caixa */
+    width: 100%;   /* Faz a caixa ocupar 90% da largura disponível */
+    max-width: 800px;   /* Limita a largura máxima da caixa */
+    margin: 20px 0;   /* Espaçamento vertical entre as caixas */
+    background-color: rgba(36, 36, 36, 0.781);   /* Define a cor de fundo da caixa */
+}
+/* Estiliza o container do carrossel */
+.slider {
+    width: 100%;        /* Faz a caixa ocupar % da largura disponível */
+    height: 100%;       /* Ocupará 100% da altura da .cx */
+    max-width: 100%;    /* Limita a largura máxima da caixa */
+    overflow: hidden;   /* Esconde partes fora da imagem */ /* Esconde o excesso */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #000000;
-    z-index: 9998;  /* <<== adiciona essa linha para ficar na frente */
-
-
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #0f0f0f;
-  color: rgb(173, 102, 102);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Imagens redimensionadas para preencher a área, mantendo proporção */
+.slider img {
+    width: 100%;            /* Faz a caixa ocupar % da largura disponível */
+    height: 100%;           /* Altura fixa */
+    object-fit: cover;      /* "cover" preenche tudo sem distorcer, pode cortar um pouco */
+    border-radius: 10px;    /* Arredonda os cantos da borda */
+    transition: opacity 0.5s ease-in-out;
+}
+/* Regras específicas para dispositivos com largura até 600px (modo celular) */
+@media (max-width: 600px) {
+    .cx {
+        padding: 30px 20px;   /* Reduz o espaçamento interno em telas menores */
+    }
 
-  padding: 10px 20px;
-  height: 60px;
-
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  font-family: Arial, sans-serif;
-  z-index: 9998; /* Fica à frente de tudo */
+    h3 {
+        font-size: 1.2rem;   /* Reduz o tamanho da fonte dos títulos */
+    }
 }
 
-
-.barra-pesquisa {
-    margin-left: 650px;
-    align-items: center;
-    display: flex;
-    border: 1px solid #333;
-    border-radius: 20px;
-    overflow: hidden;
+/* Caixa de fotos com altura fixa */
+#fotos {
+    height: 800px; /* Ajuste esse valor como preferir */
+    position: relative; /* Necessário para o conteúdo se adaptar dentro */
 }
-
-.barra-pesquisa input[type="text"] {
-    background-color: #0a0a0a;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 200px;
+#contador {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #ffffff;
 }
-
-.barra-pesquisa button {
-    background-color: #15e65e;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.barra-pesquisa button img {
-    width: 16px;
-    height: 16px;
-    filter: invert(1);
-}
-
-.centro {
-    margin-top: 50px;
-    margin-left: 240px; /* Compensa a largura da sidebar */
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.biblioteca, .recentes, .artistas {
-    background-color: #0f0f0f;
-    border-radius: 10px;
-    padding: 30px;
-    width: 1000px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-.artist-card {
-    background-color: #282828;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    color: white;
-    width: 150px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.artist-card img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-.sidebar {
-    margin-top: 70px;
+/* Coração animado */
+.coracao {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100vh;
-    background-color: #000;
-    color: white;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-    z-index: 1000;
+    top: -20px;
+    font-size: 20px;
+    animation: cair 5s linear infinite;
+    pointer-events: none;
+    color: red;
+    z-index: 9999;
+    opacity: 0.8;
 }
 
-.sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    color: #1DB954;
+/* Animação de queda */
+@keyframes cair {
+    0% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
 }
-
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar nav ul li {
-    margin: 20px 0;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: 0.2s;
-}
-
-.sidebar nav ul li a:hover {
-    color: #1DB954;
-}
-.artist-card, .recent-card, .biblioteca-card {
-    background-color: #0a0a0a;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    color: white;
-    width: 150px;
-    display: inline-block;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-.player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #0f0f0f;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.7);
-  font-family: Arial, sans-serif;
-  gap: 20px;
-    
-  z-index: 9999;  /* <<== adiciona essa linha para ficar na frente */
-
-}
-
-.player-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 200px;
-}
-
-.player-album {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.player-text h4 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.player-text p {
-  margin: 0;
-  font-size: 12px;
-  color: white;
-}
-
-.player-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-grow: 1;
-}
-
-.player-controls button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.player-controls button:hover {
-  color: #1db954; /* verde do Spotify */
-}
-
-#progress {
-  width: 100%;
-  cursor: pointer;
-}
-html {
-  scroll-behavior: smooth;
-}
-a:hover {text-decoration: underline;}
-        a {text-decoration: none;}
-        a {font-family: 'Arial', sans-serif;
-        color: white;
-        }
-        
